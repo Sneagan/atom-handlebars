@@ -1,19 +1,19 @@
 {
-  "name": "language-handlebars",
+  "name": "atom-handlebars",
   "version": "0.1.0",
   "description": "Handlebars support in Atom",
   "engines": {
     "atom": "*",
     "node": "*"
   },
-  "homepage": "https://github.com/Sneagan/language-handlebars",
+  "homepage": "https://github.com/Sneagan/atom-handlebars",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Sneagan/language-handlebars.git"
+    "url": "https://github.com/Sneagan/atom-handlebars.git"
   },
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/Sneagan/language-handlebars/issues"
+    "url": "https://github.com/Sneagan/atom-handlebars/issues"
   },
   "main": "index.js",
   "scripts": {
