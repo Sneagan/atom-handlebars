@@ -61,12 +61,9 @@
     ]
   }
   {
-    'begin': '{{'
+    'match': '\{{(.*?)\}}'
     'captures':
-      '0':
-        'name': 'markup.bold.gfm'
-      'end': '}}'
-      'name': 'markup.bold.gfm'
+      '1': 'name': 'markup.bold.gfm'
   }
   {
     'begin': '<!--'
