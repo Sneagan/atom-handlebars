@@ -20,7 +20,7 @@
     'name': 'handlebars.variable'
   }
   {
-    'match': '\{(.*)}\}'
+    'match': '\{{{(.*)}}}'
     'name': 'handlebars.variable'
   }
   {
