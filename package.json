@@ -1,0 +1,27 @@
+{
+  "name": "language-handlebars",
+  "version": "0.1.0",
+  "description": "Handlebars support in Atom",
+  "engines": {
+    "atom": "*",
+    "node": "*"
+  },
+  "homepage": "https://github.com/Sneagan/language-handlebars",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Sneagan/language-handlebars.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Sneagan/language-handlebars/issues"
+  },
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "atom",
+    "handlebars"
+  ],
+  "author": "Jackson Egan <jackson@sneagan.com> (http://sneagan.com/)"
+}
