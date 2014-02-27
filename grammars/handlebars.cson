@@ -13,7 +13,7 @@
       }
     ]
 'keyEquivalent': '^~H'
-'name': 'HTML'
+'name': 'Handlebars'
 'patterns': [
   {
     'begin': '(<)([a-zA-Z0-9:]++)(?=[^>]*></\\2>)'
@@ -59,6 +59,14 @@
         'include': '#string-single-quoted'
       }
     ]
+  }
+  {
+    'begin': '{{'
+    'captures':
+      '0':
+        'name': 'markup.bold.gfm'
+      'end': '}}'
+      'name': 'markup.bold.gfm'
   }
   {
     'begin': '<!--'
