@@ -15,10 +15,10 @@
 'keyEquivalent': '^~H'
 'name': 'Handlebars'
 'patterns': [
-  {
-    'match': '\{{2}[^}]*\}{2}'
-    'name': 'handlebars.variable'
-  }
+  # {
+  #   'match': '\{{2}[^}]*\}{2}'
+  #   'name': 'handlebars.variable'
+  # }
   {
     'match': '\{{3}[^}]*\}{4}'
     'name': 'handlebars.variable'
