@@ -20,7 +20,7 @@
     'name': 'handlebars.variable'
   }
   {
-    'match': '/({{{[^}]*}}})/'
+    'match': '\{{3}[^}]*\}{3}'
     'name': 'handlebars.variable'
   }
   {
