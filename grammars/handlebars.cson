@@ -16,11 +16,7 @@
 'name': 'Handlebars'
 'patterns': [
   {
-    'match': '\{{2}[^}]*\}{2}'
-    'name': 'handlebars.variable'
-  }
-  {
-    'match': '\{{3}[^}]*\}{3}'
+    'match': '\{{2,3}[^}]*\}{2,3}'
     'name': 'handlebars.rawvariable'
   }
   {
