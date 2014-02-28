@@ -16,7 +16,7 @@
 'name': 'Handlebars'
 'patterns': [
   {
-    'match': '\{{(.*?)\}}'
+    'match': '\{{2}[^}]*\}{2}'
     'name': 'handlebars.variable'
   }
   {
