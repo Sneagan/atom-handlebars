@@ -1,6 +1,7 @@
 'fileTypes': [
   'handlebars'
   'hbs'
+  'hjs'
 ]
 'firstLineMatch': '<(?i:(!DOCTYPE\\s*)?html)'
 'injections':
