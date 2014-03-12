@@ -1,6 +1,6 @@
 {
   "name": "atom-handlebars",
-  "version": "0.3.26",
+  "version": "0.3.27",
   "description": "Handlebars support in Atom",
   "engines": {
     "atom": "*",
