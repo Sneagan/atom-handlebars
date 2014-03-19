@@ -4,7 +4,7 @@
     'body': '<!DOCTYPE html>\n'
   'HTML Full Blank':
     'prefix': 'html'
-    'body': '<html>\n<head>\n<title>${1:Page Title}</title>\n</head>\n<body>\n</body>\n</html>'
+    'body': '<html>\n\t<head>\n\t\t<title>${1:Page Title}</title>\n\t</head>\n\t<body>\n\t</body>\n</html>'
   'Option':
     'prefix': 'opt'
     'body': '<option${1: value="${2:option}"}>${3:option}</option>'
