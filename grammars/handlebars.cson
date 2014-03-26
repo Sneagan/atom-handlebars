@@ -1,6 +1,8 @@
 'fileTypes': [
-  'handlebars'
+  'hb'
   'hbs'
+  'handlebar'
+  'handlebars'
   'hjs'
 ]
 'firstLineMatch': '<(?i:(!DOCTYPE\\s*)?html)'
