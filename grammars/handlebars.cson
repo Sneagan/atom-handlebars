@@ -6,15 +6,6 @@
   'hjs'
 ]
 'firstLineMatch': '<(?i:(!DOCTYPE\\s*)?html)'
-'injections':
-  'R:text.html - comment.block':
-    'comment': 'Use R: to ensure this matches after any other injections.'
-    'patterns': [
-      {
-        'match': '<'
-        'name': 'invalid.illegal.bad-angle-bracket.html'
-      }
-    ]
 'keyEquivalent': '^~H'
 'name': 'Handlebars'
 'patterns': [
@@ -90,7 +81,7 @@
       '0':
         'name': 'punctuation.definition.comment.handlebars'
     'end': '--}}'
-    'name': 'comment.block.handlebars'
+    'name': 'handlebars.comment.block'
     'patterns': [
       {
         'match': '--'
