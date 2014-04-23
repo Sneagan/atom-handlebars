@@ -85,6 +85,23 @@
     ]
   }
   {
+    'begin': '{{!--'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.handlebars'
+    'end': '--}}'
+    'name': 'comment.block.handlebars'
+    'patterns': [
+      {
+        'match': '--'
+        'name': 'invalid.illegal.bad-comments-or-CDATA.html'
+      }
+      {
+        'include': '#embedded-code'
+      }
+    ]
+  }
+  {
     'begin': '<!'
     'captures':
       '0':
