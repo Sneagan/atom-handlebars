@@ -456,4 +456,4 @@
   'unquoted-attribute':
     'match': '(?<==)(?:[^\\s<>/\'"]|/(?!>))+'
     'name': 'string.unquoted.html'
-'scopeName': 'text.html.basic'
+'scopeName': 'text.html.handlebars'
