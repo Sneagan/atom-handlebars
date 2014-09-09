@@ -93,6 +93,23 @@
     ]
   }
   {
+    'begin': '{{!'
+    'captures':
+      '0':
+        'name': 'punctuation.definition.comment.handlebars'
+    'end': '}}'
+    'name': 'handlebars.comment.block'
+    'patterns': [
+      {
+        'match': '(\}\}|\n)'
+        'name': 'invalid.illegal.bad-comments-or-CDATA.html'
+      }
+      {
+        'include': '#embedded-code'
+      }
+    ]
+  }
+  {
     'begin': '<!'
     'captures':
       '0':
