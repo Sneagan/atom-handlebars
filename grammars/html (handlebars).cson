@@ -5,6 +5,18 @@
 'name': 'HTML (Handlebars)'
 'patterns': [
 
+  # Comments
+  {
+    'begin': '\\{\\{!--'
+    'end': '--\\}\\}'
+    'name': 'comment.block.handlebars'
+  }
+  {
+    'begin': '\\{\\{!'
+    'end': '\\}\\}$'
+    'name': 'comment.block.handlebars'
+  }
+
   # Escape
   {
     'begin': '\\{\\{\\{'
@@ -88,18 +100,6 @@
       '0':
         'name': 'entity.name.tag.handlebars'
     'name': 'meta.tag.template.handlebars'
-  }
-
-  # Comments
-  {
-    'begin': '{{!--'
-    'end': '--}}'
-    'name': 'comment.block.handlebars'
-  }
-  {
-    'begin': '{{!'
-    'end': '}}'
-    'name': 'comment.block.handlebars'
   }
 
   # Variables
