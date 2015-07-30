@@ -13,6 +13,9 @@ Or Settings ➔ Packages ➔ Search for `atom-handlebars`
 ## Snippets
 
 - `each` ⇥
+- `eachas` ⇥
+- `eachin` ⇥
+- `get` ⇥
 - `list` ⇥
 - `if` ⇥
 - `ifelse` ⇥

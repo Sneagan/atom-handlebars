@@ -25,6 +25,28 @@
       {{/each}}
     """
 
+  'Handlebars: Each As':
+    'prefix': 'eachas'
+    'body': """
+      {{#each ${1:${2:item} ${3:as |${4:value}|}}}}
+        ${5}
+      {{/each}}
+    """
+
+  'Handlebars: Each In':
+    'prefix': 'eachin'
+    'body': """
+      {{#each-in ${1:${2:item} ${3:as |${4:value}|}}}}
+        ${5}
+      {{/each}}
+    """
+
+  'Handlebars: Get':
+    'prefix': 'get'
+    'body': """
+      {{get ${1:${2:item} ${3:value}}}}
+    """
+
   'Handlebars: List':
     'prefix': 'list'
     'body': """
