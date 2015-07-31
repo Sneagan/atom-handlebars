@@ -29,7 +29,7 @@
 
   # Helpers
   {
-    'begin': '\\{\\{([\\w-]*\\s|else)'
+    'begin': '\\{\\{(\\w[\\w\/-]*\\s|else)'
     'beginCaptures':
       '0':
         'name': 'entity.name.tag.handlebars'
@@ -55,7 +55,7 @@
 
   # Block expressions
   {
-    'begin': '\\{\\{([#^])([\\w-]*)'
+    'begin': '\\{\\{([#^])(\\w[\\w\/-]*)'
     'beginCaptures':
       '0':
         'name': 'entity.name.tag.handlebars'
@@ -87,7 +87,7 @@
 
   # Close - Block expressions
   {
-    'begin': '\\{\\{(/)([\\w-]*)'
+    'begin': '\\{\\{(/)(\\w[\\w\/-]*)'
     'beginCaptures':
       '0':
         'name': 'entity.name.tag.handlebars'
