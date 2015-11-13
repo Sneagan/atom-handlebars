@@ -104,7 +104,6 @@
     """
 
   'Handlebars: Link-to':
-  'link-to':
     'prefix': 'link'
     'body': """
       {{#link-to '${1:destination}'}}
