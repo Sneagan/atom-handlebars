@@ -26,6 +26,7 @@ Or Settings ➔ Packages ➔ Search for `atom-handlebars`
 - `log` ⇥
 - `dbg` ⇥
 - `escape` ⇥
+- `link` ⇥
 
 ## Contributions
 
