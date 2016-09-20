@@ -38,7 +38,7 @@
     'body': """
       {{#each-in ${1:${2:item} ${3:as |${4:value}|}}}}
         ${5}
-      {{/each}}
+      {{/each-in}}
     """
 
   'Handlebars: Get':
