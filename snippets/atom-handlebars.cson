@@ -80,7 +80,7 @@
   'Handlebars: Unless':
     'prefix': 'unless'
     'body': """
-      {{#unless${1: item}}}
+      {{#unless ${1: item}}}
         ${2}
       {{/unless}}
     """
