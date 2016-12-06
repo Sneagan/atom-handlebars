@@ -86,3 +86,29 @@ describe 'Handlebars grammar', ->
     expect(tokens[0]).toEqual value: '{{{', scopes: ['text.html.handlebars', 'meta.tag.template.raw.handlebars', 'entity.name.tag.handlebars']
     expect(tokens[1]).toEqual value: 'do not escape me', scopes: ['text.html.handlebars', 'meta.tag.template.raw.handlebars']
     expect(tokens[2]).toEqual value: '}}}', scopes: ['text.html.handlebars', 'meta.tag.template.raw.handlebars', 'entity.name.tag.handlebars']
+
+  it 'parses whitespace control characters', ->
+    {tokens} = grammar.tokenizeLine("{{~my-helper ~}}")
+
+    expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~variable~}}")
+
+    expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~#my-block ~}}")
+
+    expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[4]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~/my-block~}}")
+
+    expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[3]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~else~}}")
+    expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
