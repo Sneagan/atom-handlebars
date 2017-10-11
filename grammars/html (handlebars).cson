@@ -28,6 +28,34 @@
     'name': 'meta.tag.template.raw.handlebars'
   }
 
+  # Contextual Components and "Slashy" Components
+  {
+    'begin': '\\{\\{~?(\\w[\\w\/-]*)[\\.\/](\\w[\\w\/-]*)'
+    'beginCaptures':
+      '0':
+        'name': 'entity.name.tag.handlebars'
+      '1':
+        'name': 'entity.name.function.handlebars'
+      '2':
+        'name': 'entity.name.function.handlebars'
+    'end': '~?\\}\\}'
+    'endCaptures':
+      '0':
+        'name': 'entity.name.tag.handlebars'
+    'name': 'meta.tag.template.handlebars'
+    'patterns': [
+      {
+        'include': '#generic-attribute'
+      }
+      {
+        'include': '#string-double-quoted'
+      }
+      {
+        'include': '#string-single-quoted'
+      }
+    ]
+  }
+
   # Helpers
   {
     'begin': '\\{\\{~?(\\w[\\w\/-]*\\s|else)'

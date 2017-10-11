@@ -112,3 +112,35 @@ describe 'Handlebars grammar', ->
     expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
     expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
 
+  it 'parses contextual components and "slashy" components', ->
+    {tokens} = grammar.tokenizeLine("{{aaa.yyy-zzz}}")
+
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[1]).toEqual value: 'aaa', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[2]).toEqual value: '.', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[3]).toEqual value: 'yyy-zzz', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{aaa-bbb.yyy-zzz}}")
+
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[1]).toEqual value: 'aaa-bbb', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[2]).toEqual value: '.', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[3]).toEqual value: 'yyy-zzz', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{aaa/yyy-zzz}}")
+
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[1]).toEqual value: 'aaa', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[2]).toEqual value: '/', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[3]).toEqual value: 'yyy-zzz', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{aaa-bbb/yyy-zzz}}")
+
+    expect(tokens[0]).toEqual value: '{{', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[1]).toEqual value: 'aaa-bbb', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[2]).toEqual value: '/', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[3]).toEqual value: 'yyy-zzz', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars', 'entity.name.function.handlebars']
+    expect(tokens[4]).toEqual value: '}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
