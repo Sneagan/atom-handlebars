@@ -8,20 +8,20 @@
 
   # Comments
   {
-    'begin': '\\{\\{!--'
-    'end': '--\\}\\}'
+    'begin': '\\{\\{~?!--'
+    'end': '--~?\\}\\}'
     'name': 'comment.block.handlebars'
   }
   {
-    'begin': '\\{\\{!'
-    'end': '\\}\\}$'
+    'begin': '\\{\\{~?!'
+    'end': '~?\\}\\}$'
     'name': 'comment.block.handlebars'
   }
 
   # Escape
   {
-    'begin': '\\{\\{\\{~?'
-    'end': '~?\\}\\}\\}'
+    'begin': '\\{\\{~?\\{'
+    'end': '\\}~?\\}\\}'
     'captures':
       '0':
         'name': 'entity.name.tag.handlebars'

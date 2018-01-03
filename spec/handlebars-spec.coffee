@@ -111,6 +111,18 @@ describe 'Handlebars grammar', ->
     {tokens} = grammar.tokenizeLine("{{~else~}}")
     expect(tokens[0]).toEqual value: '{{~', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
     expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'meta.tag.template.handlebars', 'entity.name.tag.handlebars']
+    
+    {tokens} = grammar.tokenizeLine("{{~{variable}~}}")
+    expect(tokens[0]).toEqual value: '{{~{', scopes: ['text.html.handlebars', 'meta.tag.template.raw.handlebars', 'entity.name.tag.handlebars']
+    expect(tokens[2]).toEqual value: '}~}}', scopes: ['text.html.handlebars', 'meta.tag.template.raw.handlebars', 'entity.name.tag.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~!comment~}}")
+    expect(tokens[0]).toEqual value: '{{~!', scopes: ['text.html.handlebars', 'comment.block.handlebars']
+    expect(tokens[2]).toEqual value: '~}}', scopes: ['text.html.handlebars', 'comment.block.handlebars']
+
+    {tokens} = grammar.tokenizeLine("{{~!--\ncomment\n--~}}")
+    expect(tokens[0]).toEqual value: '{{~!--', scopes: ['text.html.handlebars', 'comment.block.handlebars']
+    expect(tokens[2]).toEqual value: '--~}}', scopes: ['text.html.handlebars', 'comment.block.handlebars']
 
   it 'parses contextual components and "slashy" components', ->
     {tokens} = grammar.tokenizeLine("{{aaa.yyy-zzz}}")
